@@ -13,6 +13,7 @@ transform/pos = Vector2( 292.899, 292.898 )
 [node name="SpaceObject1" parent="." instance=ExtResource( 1 )]
 
 transform/pos = Vector2( 337.354, 300.07 )
+mode = 1
 
 [node name="Spaceship" parent="." instance=ExtResource( 2 )]
 

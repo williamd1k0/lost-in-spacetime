@@ -43,6 +43,7 @@ damp_override/linear = -1.0
 damp_override/angular = -1.0
 script/script = ExtResource( 1 )
 wave_scene = ExtResource( 2 )
+life = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
@@ -100,5 +101,7 @@ one_shot = false
 autostart = false
 
 [connection signal="area_enter" from="HitBox" to="." method="_on_HitBox_area_enter"]
+
+[connection signal="body_enter" from="HitBox" to="." method="_on_HitBox_body_enter"]
 
 

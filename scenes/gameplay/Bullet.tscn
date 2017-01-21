@@ -5,7 +5,7 @@
 custom_solver_bias = 0.0
 radius = 10.0
 
-[node name="Bullet" type="RigidBody2D"]
+[node name="Bullet" type="RigidBody2D" groups=[ "bullet" ]]
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
