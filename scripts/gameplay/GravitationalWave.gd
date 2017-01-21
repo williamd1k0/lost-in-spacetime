@@ -15,6 +15,10 @@ func _wave_enabled(val):
 func wave(size):
 	print(size)
 	var property = 'transform/scale'
-	var wave_size_ = get_scale() + (size / 10)
+	var wave_size_ = get_scale() + (size / 100)
 	tween.interpolate_property(self, property, get_scale(), wave_size_, 3, tween.TRANS_LINEAR, tween.EASE_IN)
 	tween.start()
+
+
+func _on_Tween_tween_complete( object, key ):
+	queue_free()
