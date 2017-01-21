@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://scripts/gameplay/GravitationalWave.gd" type="Script" id=1]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -17,6 +19,9 @@ gravity_vec = Vector2( 0, 10 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+script/script = ExtResource( 1 )
+wave_size = 1
+wave_enabled = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
@@ -25,5 +30,12 @@ trigger = true
 _update_shape_index = 0
 
 [node name="Sprite" type="Sprite" parent="."]
+
+[node name="Tween" type="Tween" parent="."]
+
+playback/process_mode = 0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
 
 

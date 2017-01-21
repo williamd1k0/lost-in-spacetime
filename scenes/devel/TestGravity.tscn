@@ -21,5 +21,7 @@ transform/pos = Vector2( 361.29, 294.847 )
 [node name="GravitationalWave" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 349.938, 430.499 )
+wave_size = 1
+wave_enabled = null
 
 
