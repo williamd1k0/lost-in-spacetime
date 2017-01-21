@@ -10,9 +10,8 @@ emitting = true
 
 [node name="Center" type="Particles2D" parent="."]
 
-transform/scale = Vector2( 1, 0.78125 )
 config/amount = 50
-config/lifetime = 0.5
+config/lifetime = 0.4
 config/local_space = false
 params/direction = 0.0
 params/spread = 16.07
@@ -35,9 +34,8 @@ color/color = Color( 0.368061, 0.350952, 0.898438, 1 )
 [node name="Left" type="Particles2D" parent="."]
 
 transform/pos = Vector2( -5, 0 )
-transform/scale = Vector2( 1, 0.78125 )
 config/amount = 50
-config/lifetime = 0.3
+config/lifetime = 0.2
 config/local_space = false
 params/direction = 0.0
 params/spread = 16.07
@@ -59,9 +57,8 @@ params/anim_initial_pos = 0.0
 [node name="Right" type="Particles2D" parent="."]
 
 transform/pos = Vector2( 5, 0 )
-transform/scale = Vector2( 1, 0.78125 )
 config/amount = 50
-config/lifetime = 0.3
+config/lifetime = 0.2
 config/local_space = false
 params/direction = 0.0
 params/spread = 16.07
