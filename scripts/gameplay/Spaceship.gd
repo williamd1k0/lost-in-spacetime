@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+export(PackedScene) var bullet
+export(NodePath) var bullet_target = '..'
 onready var cannon = get_node("Cannon")
 
 func _ready():
@@ -8,6 +10,15 @@ func _ready():
 func _fixed_process(delta):
 	process_jet_propulsion(delta)
 	process_rotation(delta)
+	process_shot(delta)
+
+func process_shot(delta):
+	if Input.is_action_pressed("ui_up"):
+		var shotvect = (get_node("Cannon/Position2D").get_global_pos() - get_global_pos()).normalized()
+		var bullet_instance = bullet.instance()
+		bullet_instance.set_global_pos(get_global_pos())
+		get_node(bullet_target).add_child(bullet_instance)
+		bullet_instance.set_linear_velocity(shotvect * 1000)
 
 func process_rotation(delta):
 	if Input.is_action_pressed("ui_right"):
