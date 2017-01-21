@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scripts/gameplay/SpaceObject.gd" type="Script" id=1]
 [ext_resource path="res://scenes/gameplay/GravitationalWave.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/textures/gameplay/spaceobj02.tex" type="Texture" id=3]
+[ext_resource path="res://assets/textures/gameplay/spaceobj01.tex" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -19,11 +19,11 @@ radius = 10.0
 custom_solver_bias = 0.0
 radius = 10.0
 
-[node name="SpaceObject2" type="RigidBody2D"]
+[node name="SpaceObject1" type="RigidBody2D"]
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 8.95858, 0, 0, 8.79444, 0, 0 )
+shapes/0/transform = Matrix32( 8.1351, 0, 0, 4.70548, 1.60326, 0.379115 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -52,7 +52,9 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-transform/scale = Vector2( 8.95858, 8.79444 )
+visibility/visible = false
+transform/pos = Vector2( 1.60326, 0.379115 )
+transform/scale = Vector2( 8.1351, 4.70548 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
@@ -61,7 +63,7 @@ _update_shape_index = 0
 
 input/pickable = true
 shapes/0/shape = SubResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.115192, -0.681507 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 space_override = 2
 gravity_point = true
@@ -72,7 +74,6 @@ angular_damp = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gravity"]
 
-transform/pos = Vector2( 0.115192, -0.681507 )
 shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -81,7 +82,7 @@ _update_shape_index = 0
 
 input/pickable = true
 shapes/0/shape = SubResource( 3 )
-shapes/0/transform = Matrix32( 10.351, 0, 0, 10.4956, 0.144021, -1.67924 )
+shapes/0/transform = Matrix32( 9.14315, 0, 0, 6.04953, -0.284904, 2.90111 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -90,8 +91,8 @@ angular_damp = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 
-transform/pos = Vector2( 0.144021, -1.67924 )
-transform/scale = Vector2( 10.351, 10.4956 )
+transform/pos = Vector2( -0.284904, 2.90111 )
+transform/scale = Vector2( 9.14315, 6.04953 )
 shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 0

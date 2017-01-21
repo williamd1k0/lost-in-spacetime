@@ -23,6 +23,7 @@ func explode():
 		wave.wave(get_item_and_children_rect().size)
 
 func _on_HitBox_body_enter( body ):
+	print("Body enter")
 	if 'bullet' in body.get_groups():
 		life -= 1
 		if life <= 0:
