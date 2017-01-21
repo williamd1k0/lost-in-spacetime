@@ -1,27 +1,24 @@
 [gd_scene load_steps=4 format=1]
 
-[ext_resource path="res://scenes/gameplay/SpaceObject.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/gameplay/Spaceship.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/gameplay/Spaceship.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/gameplay/space-objects/SpaceObject2.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/gameplay/GravitationalWave.tscn" type="PackedScene" id=3]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="SpaceObject" parent="." instance=ExtResource( 1 )]
-
-transform/pos = Vector2( 292.899, 292.898 )
-
-[node name="SpaceObject1" parent="." instance=ExtResource( 1 )]
-
-transform/pos = Vector2( 337.354, 300.07 )
-mode = 1
-
-[node name="Spaceship" parent="." instance=ExtResource( 2 )]
+[node name="Spaceship" parent="." instance=ExtResource( 1 )]
 
 transform/pos = Vector2( 361.29, 294.847 )
 
+[node name="SpaceObject2" parent="." instance=ExtResource( 2 )]
+
+[node name="SpaceObject3" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 754.175, 77.272 )
+
 [node name="GravitationalWave" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 349.938, 430.499 )
+transform/pos = Vector2( 90.5793, 27.2489 )
 wave_enabled = null
 
 

@@ -7,7 +7,7 @@ export var life = 1
 var can_explode = true
 
 func _ready():
-	pass
+	get_node("Gravity").set_scale(get_item_and_children_rect().size / 5)
 
 
 func _on_HitBox_area_enter( area ):
