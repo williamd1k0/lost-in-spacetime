@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://scenes/gameplay/SpaceObject.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/gameplay/Spaceship.tscn" type="PackedScene" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="SpaceObject" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 292.899, 292.898 )
+
+[node name="SpaceObject1" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 337.354, 300.07 )
+
+[node name="Spaceship" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 361.29, 294.847 )
+
+
