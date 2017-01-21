@@ -5,6 +5,7 @@
 
 [node name="Space" type="TileMap"]
 
+z/z = -2
 mode = 0
 tile_set = ExtResource( 1 )
 cell/size = Vector2( 1024, 1024 )

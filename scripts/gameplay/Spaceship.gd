@@ -3,6 +3,8 @@ extends RigidBody2D
 export(PackedScene) var bullet
 export(NodePath) var bullet_target = '..'
 onready var cannon = get_node("Cannon")
+onready var jet = get_node("Jet")
+var speed = 150
 
 func _ready():
 	set_fixed_process(true)
@@ -28,12 +30,24 @@ func process_rotation(delta):
 		
 func process_jet_propulsion(delta):
 	if Input.is_action_pressed("jet_up"):
-		apply_impulse(Vector2(0, 0), Vector2(0, 1))
-	elif Input.is_action_pressed("jet_down"):
-		apply_impulse(Vector2(0, 0), Vector2(0, -1))
+		apply_impulse(Vector2(0, 0), Vector2(0, delta * speed))
+		jet.get_node("JetUp").emit()
+	else:
+		jet.get_node("JetUp").stop()
+	if Input.is_action_pressed("jet_down"):
+		apply_impulse(Vector2(0, 0), Vector2(0, -delta * speed))
+		jet.get_node("JetDown").emit()
+	else:
+		jet.get_node("JetDown").stop()
 		
 	if Input.is_action_pressed("jet_left"):
-		apply_impulse(Vector2(0, 0), Vector2(1, 0))
-	elif Input.is_action_pressed("jet_right"):
-		apply_impulse(Vector2(0, 0), Vector2(-1, 0))
+		apply_impulse(Vector2(0, 0), Vector2(delta * speed, 0))
+		jet.get_node("JetLeft").emit()
+	else:
+		jet.get_node("JetLeft").stop()
+	if Input.is_action_pressed("jet_right"):
+		apply_impulse(Vector2(0, 0), Vector2(-delta * speed, 0))
+		jet.get_node("JetRight").emit()
+	else:
+		jet.get_node("JetRight").stop()
 
