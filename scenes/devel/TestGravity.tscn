@@ -1,31 +1,34 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
-[ext_resource path="res://scenes/gameplay/Spaceship.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/gameplay/space-objects/SpaceObject2.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/gameplay/GravitationalWave.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/gameplay/space-objects/SpaceObject1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/utils/Space.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/gameplay/Spaceship.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/gameplay/space-objects/SpaceObject2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/gameplay/GravitationalWave.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/gameplay/space-objects/SpaceObject1.tscn" type="PackedScene" id=5]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Spaceship" parent="." instance=ExtResource( 1 )]
+[node name="Space" parent="." instance=ExtResource( 1 )]
+
+[node name="Spaceship" parent="." instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 361.29, 294.847 )
 
-[node name="SpaceObject2" parent="." instance=ExtResource( 2 )]
+[node name="SpaceObject2" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 130, -120 )
 
-[node name="SpaceObject3" parent="." instance=ExtResource( 2 )]
+[node name="SpaceObject3" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 754.175, 77.272 )
 
-[node name="GravitationalWave" parent="." instance=ExtResource( 3 )]
+[node name="GravitationalWave" parent="." instance=ExtResource( 4 )]
 
 visibility/visible = false
 transform/pos = Vector2( 90.5793, 27.2489 )
 wave_enabled = null
 
-[node name="SpaceObject1" parent="." instance=ExtResource( 4 )]
+[node name="SpaceObject1" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 98.5411, 98.5411 )
 
