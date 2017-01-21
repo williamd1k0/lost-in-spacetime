@@ -1,12 +1,13 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://scripts/gameplay/Spaceship.gd" type="Script" id=1]
 [ext_resource path="res://scenes/gameplay/Bullet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/textures/gameplay/spaceship.tex" type="Texture" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+radius = 10.0
 
 [sub_resource type="RayShape2D" id=2]
 
@@ -16,8 +17,8 @@ length = 14.8317
 [node name="Spaceship" type="RigidBody2D"]
 
 input/pickable = true
-shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 6, 0, 0, 6, 0, 0 )
 shapes/0/trigger = true
 collision/layers = 1
 collision/mask = 1
@@ -42,9 +43,12 @@ bullet_target = ".."
 
 [node name="Sprite" type="Sprite" parent="."]
 
+texture = ExtResource( 3 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-shape = SubResource( 1 )
+transform/scale = Vector2( 6, 6 )
+shape = SubResource( 3 )
 trigger = true
 _update_shape_index = 0
 
