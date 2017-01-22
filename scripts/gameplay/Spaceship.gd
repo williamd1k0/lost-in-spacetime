@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+signal hit_kill
+
 export(PackedScene) var bullet
 export(NodePath) var bullet_target = '..'
 onready var cannon = get_node("Cannon")
@@ -61,7 +63,10 @@ func process_jet_propulsion(delta):
 
 
 func _on_HitBox_area_enter( area ):
-	if 'space-object' in area.get_groups():
+	if 'space-object-area' in area.get_groups():
 		emit_signal('hit_kill')
-		# play animation
-		queue_free()
+		get_node("AnimationPlayer").play("explode")
+
+
+func _on_AnimationPlayer_finished():
+	queue_free()

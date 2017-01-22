@@ -13,5 +13,4 @@ func _fixed_process(delta):
 	var viewport_size = get_viewport_rect().size
 	var distance = initial_pos.distance_to(get_pos())
 	if  distance > viewport_size.x * 2:
-		print("out of screen")
 		queue_free()
