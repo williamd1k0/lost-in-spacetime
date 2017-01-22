@@ -43,7 +43,6 @@ transform/pos = Vector2( 754.175, 77.272 )
 
 [node name="GravitationalWave" parent="." instance=ExtResource( 4 )]
 
-visibility/visible = false
 transform/pos = Vector2( 90.5793, 27.2489 )
 wave_enabled = null
 
