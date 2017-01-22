@@ -1,13 +1,14 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://scenes/utils/SceneBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/utils/Space.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/gameplay/Spaceship.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/fonts/orbitron/Orbitron-Regular.fnt" type="BitmapFont" id=4]
 
 [sub_resource type="Animation" id=1]
 
 resource/name = "zoom-out"
-length = 25.0
+length = 27.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -30,6 +31,11 @@ tracks/3/path = NodePath("..:running")
 tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = { "times":FloatArray( 0, 23 ), "transitions":FloatArray( 1, 1 ), "update":1, "values":[ true, false ] }
+tracks/4/type = "value"
+tracks/4/path = NodePath("../CanvasLayer/move:percent_visible")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = { "times":FloatArray( 0, 1, 3, 4 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ 0.0, 1.0, 1.0, 0.0 ] }
 
 [node name="Intro" instance=ExtResource( 1 )]
 
@@ -69,7 +75,7 @@ color = Color( 1, 1, 1, 1 )
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 1, 1 )
+zoom = Vector2( 2.06932, 2.06932 )
 limit/left = -10000000
 limit/top = -10000000
 limit/right = 10000000
@@ -97,5 +103,28 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = "zoom-out"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="move" type="Label" parent="CanvasLayer"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 528.0
+margin/top = 544.0
+margin/right = 1005.0
+margin/bottom = 585.0
+custom_fonts/font = ExtResource( 4 )
+text = "WASD - JET PROPULSION"
+percent_visible = 0.0
+lines_skipped = 0
+max_lines_visible = -1
 
 
