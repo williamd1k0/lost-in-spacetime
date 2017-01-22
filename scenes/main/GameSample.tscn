@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=1]
+[gd_scene load_steps=12 format=1]
 
 [ext_resource path="res://scenes/utils/SceneBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/main/GameProcess.gd" type="Script" id=2]
 [ext_resource path="res://scenes/utils/Space.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/gameplay/Spaceship.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/gameplay/space-objects/SpaceObject2.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/fonts/orbitron/Orbitron-Regular.fnt" type="BitmapFont" id=6]
-[ext_resource path="res://assets/fonts/orbitron/Orbitron-Black.fnt" type="BitmapFont" id=7]
+[ext_resource path="res://scenes/gameplay/space-objects/SpaceObject1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/fonts/orbitron/Orbitron-Regular.fnt" type="BitmapFont" id=7]
+[ext_resource path="res://assets/fonts/orbitron/Orbitron-Black.fnt" type="BitmapFont" id=8]
 
 [sub_resource type="Animation" id=1]
 
@@ -40,7 +41,7 @@ tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = { "times":FloatArray( 3, 4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ] }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 
 resource/name = "init"
 length = 1.0
@@ -52,9 +53,8 @@ tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ Color( 1, 1, 1, 1 ) ] }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 
-resource/name = "move"
 length = 3.0
 loop = false
 step = 0.1
@@ -101,8 +101,6 @@ drag_margin/right = 0.2
 drag_margin/bottom = 0.2
 
 [node name="SpaceObjects" type="Node2D" parent="."]
-
-editor/display_folded = true
 
 [node name="SpaceObject2" parent="SpaceObjects" instance=ExtResource( 5 )]
 
@@ -160,13 +158,86 @@ transform/pos = Vector2( -1312, -5232 )
 
 transform/pos = Vector2( 976, -5648 )
 
+[node name="SpaceObject33" parent="SpaceObjects" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 2448, -6160 )
+
 [node name="SpaceObject17" parent="SpaceObjects" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( -240, -5584 )
 
+[node name="SpaceObject1" parent="SpaceObjects" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -592, -752 )
+
+[node name="SpaceObject8" parent="SpaceObjects" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 432, -1056 )
+
+[node name="SpaceObject18" parent="SpaceObjects" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -1504, -928 )
+
+[node name="SpaceObject19" parent="SpaceObjects" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -768, -1952 )
+
+[node name="SpaceObject20" parent="SpaceObjects" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1568, -2304 )
+
+[node name="SpaceObject21" parent="SpaceObjects" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 2384, -1344 )
+
+[node name="SpaceObject22" parent="SpaceObjects" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 3424, -2480 )
+
+[node name="SpaceObject23" parent="SpaceObjects" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 2368, -3760 )
+
+[node name="SpaceObject24" parent="SpaceObjects" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 656, -3664 )
+
+[node name="SpaceObject25" parent="SpaceObjects" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -544, -4768 )
+
+[node name="SpaceObject26" parent="SpaceObjects" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -2880, -4688 )
+
+[node name="SpaceObject27" parent="SpaceObjects" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -2880, -6048 )
+
+[node name="SpaceObject28" parent="SpaceObjects" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -2000, -6816 )
+
+[node name="SpaceObject29" parent="SpaceObjects" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 48, -6928 )
+
+[node name="SpaceObject30" parent="SpaceObjects" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1904, -6944 )
+
+[node name="SpaceObject31" parent="SpaceObjects" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 4208, -6064 )
+
+[node name="SpaceObject32" parent="SpaceObjects" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 3424, -5024 )
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 
 color = Color( 1, 1, 1, 1 )
+__meta__ = { "_edit_lock_":true }
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
@@ -185,7 +256,7 @@ margin/left = 32.0
 margin/top = 32.0
 margin/right = 624.0
 margin/bottom = 73.0
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 text = "SCORE"
 percent_visible = 1.0
 lines_skipped = 0
@@ -201,7 +272,7 @@ margin/left = 352.0
 margin/top = 32.0
 margin/right = 992.0
 margin/bottom = 144.0
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 text = "BEST"
 align = 2
 percent_visible = 1.0
@@ -219,7 +290,7 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 1024.0
 margin/bottom = 592.0
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = "GAME OVER\nNEW HIGHSCORE\n{SCORE}"
 align = 1
 valign = 1
@@ -233,7 +304,7 @@ playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
 anims/gameover = SubResource( 1 )
-anims/init = SubResource( 3 )
+anims/init = SubResource( 2 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -249,7 +320,7 @@ margin/left = 0.0
 margin/top = 480.0
 margin/right = 1024.0
 margin/bottom = 592.0
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 text = "LEFT/RIGHT - AIM\nUP - SHOOT"
 align = 1
 valign = 1
@@ -262,7 +333,7 @@ max_lines_visible = -1
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/move = SubResource( 2 )
+anims/move = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
