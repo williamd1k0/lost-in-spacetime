@@ -18,7 +18,12 @@ func wave(size):
 	var wave_size_ = get_scale() + (size / 100)
 	tween.interpolate_property(self, property, get_scale(), wave_size_, 3, tween.TRANS_LINEAR, tween.EASE_IN)
 	tween.start()
+	yield(tween, "tween_complete")
+	hide_wave()
 
-
-func _on_Tween_tween_complete( object, key ):
+func hide_wave():
+	var property = 'transform/scale'
+	tween.interpolate_property(self, property, get_scale(), Vector2(0, 0), 2, tween.TRANS_LINEAR, tween.EASE_IN)
+	tween.start()
+	yield(tween, "tween_complete")
 	queue_free()

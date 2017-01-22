@@ -42,11 +42,14 @@ tracks/4/keys = { "times":FloatArray( 3, 4 ), "transitions":FloatArray( 1, 1 ), 
 
 [node name="GameSample" instance=ExtResource( 1 )]
 
+next_scene = "res://scenes/main/GameSample.tscn"
+
 [node name="GameProcess" type="Node" parent="."]
 
 script/script = ExtResource( 2 )
 score_label = NodePath("../GUI/score")
 high_label = NodePath("../GUI/high")
+gameover = NodePath("../GUI/gameover")
 default_camera = NodePath("../Spaceship/Camera2D")
 anime = NodePath("../GUI/AnimationPlayer")
 
@@ -214,7 +217,5 @@ blend_times = [  ]
 autoplay = ""
 
 [connection signal="hit_kill" from="Spaceship" to="GameProcess" method="_on_Spaceship_hit_kill"]
-
-[connection signal="finished" from="GUI/AnimationPlayer" to="GameProcess" method="_on_AnimationPlayer_finished"]
 
 

@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-signal explode(collider, object)
+signal explode(collider, score)
 
 export(PackedScene) var wave_scene
 export(int) var score_value = 0
@@ -12,9 +12,9 @@ func _ready():
 
 
 func _on_HitBox_area_enter( area ):
-	if 'space-object' in area.get_groups():
+	if 'space-object-area' in area.get_groups():
 		explode()
-		emit_signal('explode', 'space-object', self)
+		emit_signal('explode', 'space-object', score_value)
 
 func explode():
 	if can_explode:
@@ -24,9 +24,10 @@ func explode():
 
 func _on_HitBox_body_enter( body ):
 	if 'bullet' in body.get_groups():
+		body.queue_free()
 		life -= 1
 		if life <= 0:
-			emit_signal('explode', 'bullet', self)
+			emit_signal('explode', 'bullet', score_value)
 			explode()
-			can_explode = false
+			#can_explode = false
 			#queue_free()

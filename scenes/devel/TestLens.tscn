@@ -28,7 +28,7 @@ drag_margin/bottom = 0.2
 
 [node name="Lens" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 317.789, 312.34 )
+transform/pos = Vector2( 186.421, 237.448 )
 transform/scale = Vector2( 5.96545, 5.88031 )
 
 [node name="Lens1" parent="." instance=ExtResource( 2 )]
