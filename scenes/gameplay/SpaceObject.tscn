@@ -18,7 +18,7 @@ radius = 30.0
 custom_solver_bias = 0.0
 radius = 10.0
 
-[node name="SpaceObject" type="RigidBody2D"]
+[node name="SpaceObject" type="RigidBody2D" groups=[ "space-object" ]]
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
