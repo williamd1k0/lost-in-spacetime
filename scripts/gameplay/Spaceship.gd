@@ -59,3 +59,9 @@ func process_jet_propulsion(delta):
 	else:
 		jet.get_node("JetRight").stop()
 
+
+func _on_HitBox_area_enter( area ):
+	if 'space-object' in area.get_groups():
+		emit_signal('hit_kill')
+		# play animation
+		queue_free()
