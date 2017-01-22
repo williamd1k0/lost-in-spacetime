@@ -70,12 +70,14 @@ color = Color( 1, 1, 1, 1 )
 
 [node name="Spaceship" parent="." instance=ExtResource( 3 )]
 
+editor/display_folded = true
+
 [node name="Camera2D" type="Camera2D" parent="Spaceship"]
 
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 2.06932, 2.06932 )
+zoom = Vector2( 1, 1 )
 limit/left = -10000000
 limit/top = -10000000
 limit/right = 10000000
