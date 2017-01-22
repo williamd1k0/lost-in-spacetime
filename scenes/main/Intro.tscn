@@ -33,11 +33,10 @@ tracks/3/keys = { "times":FloatArray( 0, 23 ), "transitions":FloatArray( 1, 1 ),
 
 [node name="Intro" instance=ExtResource( 1 )]
 
-next_scene = "res://scenes/main/Intro.tscn"
+next_scene = "res://scenes/main/IntroText.tscn"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
