@@ -45,7 +45,7 @@ damp_override/angular = -1.0
 script/script = ExtResource( 1 )
 wave_scene = ExtResource( 2 )
 score_value = 10
-life = 1
+life = 100
 
 [node name="Sprite" type="Sprite" parent="."]
 
@@ -96,6 +96,8 @@ transform/scale = Vector2( 10.351, 10.4956 )
 shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 0
+
+[node name="Waves" type="Node2D" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
 

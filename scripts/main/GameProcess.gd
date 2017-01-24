@@ -30,13 +30,11 @@ func add_spaceobject_signals():
 	var space_objects = get_tree().get_nodes_in_group('space-object')
 	print(space_objects)
 	for obj in space_objects:
-		obj.connect('explode', self, '_on_spaceobject_explode')
+		obj.connect('damage', self, '_on_spaceobject_damage')
 
-func _on_spaceobject_explode(collider, score):
-	print(collider)
-	if collider == 'bullet':
-		high_score += score
-		set_highscore(high_score)
+func _on_spaceobject_damage(score):
+	high_score += score
+	set_score(high_score)
 
 func set_highscore(score):
 	get_node(high_label).set_text('BEST: '+str(score))
