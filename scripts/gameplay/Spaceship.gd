@@ -69,7 +69,7 @@ func _on_HitBox_area_enter( area ):
 	if 'space-object-area' in area.get_groups():
 		emit_signal('hit_kill')
 		get_node("AnimationPlayer").play("explode")
-		queue_free()
+		#queue_free()
 
 func _on_AnimationPlayer_finished():
 	queue_free()

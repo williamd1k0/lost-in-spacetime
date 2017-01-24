@@ -10,6 +10,6 @@ func _ready():
 
 func _toggle_running(val):
 	running = val
-	print('Running scene', val)
+	#print('Running scene', val)
 	if not val:
 		emit_signal('done', next_scene)

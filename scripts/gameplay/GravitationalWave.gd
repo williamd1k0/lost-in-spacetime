@@ -1,5 +1,7 @@
 extends Area2D
 
+signal end
+
 export var wave_size = 1
 export(bool) var wave_enabled setget _wave_enabled
 onready var tween = get_node("Tween")
@@ -26,4 +28,5 @@ func hide_wave():
 	tween.interpolate_property(self, property, get_scale(), Vector2(0, 0), 2, tween.TRANS_LINEAR, tween.EASE_IN)
 	tween.start()
 	yield(tween, "tween_complete")
+	emit_signal('end')
 	queue_free()
