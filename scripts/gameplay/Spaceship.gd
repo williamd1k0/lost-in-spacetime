@@ -6,8 +6,9 @@ export(PackedScene) var bullet
 export(NodePath) var bullet_target = '..'
 onready var cannon = get_node("Cannon")
 onready var jet = get_node("Jet")
-var speed = 150
+var speed = 160
 var max_velocity = 450
+var delta_check = 0
 
 func _ready():
 	set_fixed_process(true)
@@ -15,10 +16,12 @@ func _ready():
 func _fixed_process(delta):
 	process_jet_propulsion(delta)
 	process_rotation(delta)
-	process_shot(delta)
+	process_shoot(delta)
 
-func process_shot(delta):
-	if Input.is_action_pressed("ui_up"):
+func process_shoot(delta):
+	delta_check += delta
+	if Input.is_action_pressed("ui_up") and delta_check >= 0.2:
+		delta_check = 0
 		var shotvect = (get_node("Cannon/Position2D").get_global_pos() - get_global_pos()).normalized()
 		var bullet_instance = bullet.instance()
 		bullet_instance.set_global_pos(get_global_pos())
